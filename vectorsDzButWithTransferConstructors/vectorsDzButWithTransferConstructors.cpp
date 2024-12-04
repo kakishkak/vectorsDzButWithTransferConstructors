@@ -124,6 +124,12 @@ public:
 		return this->z;
 	}
 
+	//Vector3D(Vector3D&& other) noexcept :x(other.x), y(other.y), z(other.z) {
+	//	other.x = 0;
+	//	other.y = 0;
+	//	other.z = 0;
+	//}
+
 	void PrintInfo() {
 		cout << "X: " << this->x << "  Y: " << this->y << "  Z: " << this->z << endl;
 	}
@@ -299,112 +305,124 @@ bool operator==(Vector& second, Vector3D& third) {												   //
 
 int main()
 {
-	bool superPuperChecker;		// Our cheker for > < >= <= ==																   
+	//bool superPuperChecker;		// Our cheker for > < >= <= ==																   
+	//
+	////!!!!We add and subtract the first and second copies of each class, and compare the rest
+	//
+	//Vector obj2D_1 = Vector(2, 2);
+	//Vector obj2D_2 = Vector(3, 3);
+	//Vector obj2D_3 = Vector(5, 5);
+	//Vector obj2D_4 = Vector(5, 5);
+	//
+	//Vector3D obj3D_1 = Vector3D(2, 2, 2);
+	//Vector3D obj3D_2 = Vector3D(3, 3, 3);
+	//Vector3D obj3D_3 = Vector3D(5, 5, 5);
+	//Vector3D obj3D_4 = Vector3D(5, 5, 5);
+	//
+	//cout << ":VECTOR TO VECTOR:" << endl;				   //
+	//cout << "Plus" << endl;								   //
+	//obj2D_1 = obj2D_1 + obj2D_2;						   //
+	//obj2D_1.PrintInfo();								   //
+	//cout << "Minus" << endl;							   //
+	//obj2D_1 = obj2D_1 - obj2D_2;						   //
+	//obj2D_1.PrintInfo();								   //
+	//cout << "Operation \">\"" << endl;					   //
+	//superPuperChecker = obj2D_3 > obj2D_4;				   //
+	//cout << superPuperChecker << endl;					   //  Here`s working 2D to 2D
+	//cout << "Operation \">=\"" << endl;					   //
+	//superPuperChecker = obj2D_3 >= obj2D_4;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<\"" << endl;					   //
+	//superPuperChecker = obj2D_3 < obj2D_4;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<=\"" << endl;					   //
+	//superPuperChecker = obj2D_3 <= obj2D_4;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"==\"" << endl;					   //
+	//superPuperChecker = obj2D_3 == obj2D_4;				   //
+	//cout << superPuperChecker << endl << endl;			   //
+	//
+	//
+	//cout << ":VECTOR3D TO VECTOR3D:" << endl;			   //
+	//cout << "Plus" << endl;								   //
+	//obj3D_1 = obj3D_1 + obj3D_2;						   //
+	//obj3D_1.PrintInfo();								   //
+	//cout << "Minus" << endl;							   //
+	//obj3D_1 = obj3D_1 - obj3D_2;						   //
+	//obj3D_1.PrintInfo();								   //
+	//cout << "Operation \">\"" << endl;					   //
+	//superPuperChecker = obj3D_3 > obj3D_4;				   //
+	//cout << superPuperChecker << endl;					   //  Here`s working 3D to 3D
+	//cout << "Operation \">=\"" << endl;					   //
+	//superPuperChecker = obj3D_3 >= obj3D_4;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<\"" << endl;					   //
+	//superPuperChecker = obj3D_3 < obj3D_4;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<=\"" << endl;					   //
+	//superPuperChecker = obj3D_3 <= obj3D_4;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"==\"" << endl;					   //
+	//superPuperChecker = obj3D_3 == obj3D_4;				   //
+	//cout << superPuperChecker << endl << endl;			   //
+	//
+	//
+	//cout << ":VECTOR3D TO VECTOR:" << endl;			       //
+	//cout << "Plus" << endl;								   //
+	//obj3D_1 = obj3D_1 + obj2D_1;						   //
+	//obj3D_1.PrintInfo();								   //
+	//cout << "Minus" << endl;							   //
+	//obj3D_1 = obj3D_1 - obj2D_1;						   //
+	//obj3D_1.PrintInfo();								   //
+	//cout << "Operation \">\"" << endl;					   //
+	//superPuperChecker = obj3D_3 > obj2D_3;				   //
+	//cout << superPuperChecker << endl;					   //  Here`s working 3D to 2D
+	//cout << "Operation \">=\"" << endl;					   //
+	//superPuperChecker = obj3D_3 >= obj2D_3;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<\"" << endl;					   //
+	//superPuperChecker = obj3D_3 < obj2D_3;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<=\"" << endl;					   //
+	//superPuperChecker = obj3D_3 <= obj2D_3;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"==\"" << endl;					   //
+	//superPuperChecker = obj3D_3 == obj2D_3;				   //
+	//cout << superPuperChecker << endl << endl;			   //
+	//
+	//
+	//cout << ":VECTOR TO VECTOR3D:" << endl;				   //
+	//cout << "Plus" << endl;								   //
+	//obj2D_1 = obj2D_1 + obj3D_1;						   //
+	//obj2D_1.PrintInfo();								   //
+	//cout << "Minus" << endl;							   //
+	//obj2D_1 = obj2D_1 - obj3D_1;						   //
+	//obj2D_1.PrintInfo();								   //
+	//cout << "Operation \">\"" << endl;					   //
+	//superPuperChecker = obj2D_3 > obj3D_3;				   //
+	//cout << superPuperChecker << endl;					   //  And here`s working 2D to 3D
+	//cout << "Operation \">=\"" << endl;					   //
+	//superPuperChecker = obj2D_3 >= obj3D_3;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<\"" << endl;					   //
+	//superPuperChecker = obj2D_3 < obj3D_3;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"<=\"" << endl;					   //
+	//superPuperChecker = obj2D_3 <= obj3D_3;				   //
+	//cout << superPuperChecker << endl;					   //
+	//cout << "Operation \"==\"" << endl;					   //
+	//superPuperChecker = obj2D_3 == obj3D_3;				   //
+	//cout << superPuperChecker;							   //
+	//cout << superPuperChecker << endl << endl;
 
-	//!!!!We add and subtract the first and second copies of each class, and compare the rest
-
-	Vector obj2D_1 = Vector(2, 2);
-	Vector obj2D_2 = Vector(3, 3);
-	Vector obj2D_3 = Vector(5, 5);
-	Vector obj2D_4 = Vector(5, 5);
-
-	Vector3D obj3D_1 = Vector3D(2, 2, 2);
-	Vector3D obj3D_2 = Vector3D(3, 3, 3);
-	Vector3D obj3D_3 = Vector3D(5, 5, 5);
-	Vector3D obj3D_4 = Vector3D(5, 5, 5);
-
-	cout << ":VECTOR TO VECTOR:" << endl;				   //
-	cout << "Plus" << endl;								   //
-	obj2D_1 = obj2D_1 + obj2D_2;						   //
-	obj2D_1.PrintInfo();								   //
-	cout << "Minus" << endl;							   //
-	obj2D_1 = obj2D_1 - obj2D_2;						   //
-	obj2D_1.PrintInfo();								   //
-	cout << "Operation \">\"" << endl;					   //
-	superPuperChecker = obj2D_3 > obj2D_4;				   //
-	cout << superPuperChecker << endl;					   //  Here`s working 2D to 2D
-	cout << "Operation \">=\"" << endl;					   //
-	superPuperChecker = obj2D_3 >= obj2D_4;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<\"" << endl;					   //
-	superPuperChecker = obj2D_3 < obj2D_4;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<=\"" << endl;					   //
-	superPuperChecker = obj2D_3 <= obj2D_4;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"==\"" << endl;					   //
-	superPuperChecker = obj2D_3 == obj2D_4;				   //
-	cout << superPuperChecker << endl << endl;			   //
 
 
-	cout << ":VECTOR3D TO VECTOR3D:" << endl;			   //
-	cout << "Plus" << endl;								   //
-	obj3D_1 = obj3D_1 + obj3D_2;						   //
-	obj3D_1.PrintInfo();								   //
-	cout << "Minus" << endl;							   //
-	obj3D_1 = obj3D_1 - obj3D_2;						   //
-	obj3D_1.PrintInfo();								   //
-	cout << "Operation \">\"" << endl;					   //
-	superPuperChecker = obj3D_3 > obj3D_4;				   //
-	cout << superPuperChecker << endl;					   //  Here`s working 3D to 3D
-	cout << "Operation \">=\"" << endl;					   //
-	superPuperChecker = obj3D_3 >= obj3D_4;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<\"" << endl;					   //
-	superPuperChecker = obj3D_3 < obj3D_4;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<=\"" << endl;					   //
-	superPuperChecker = obj3D_3 <= obj3D_4;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"==\"" << endl;					   //
-	superPuperChecker = obj3D_3 == obj3D_4;				   //
-	cout << superPuperChecker << endl << endl;			   //
 
+	Vector vectorObj2D = Vector(99, 99);					 //
+	Vector vectorObj2D2 = move(vectorObj2D);				 //Peremezhenie
+	vectorObj2D2.PrintInfo();								 //
 
-	cout << ":VECTOR3D TO VECTOR:" << endl;			       //
-	cout << "Plus" << endl;								   //
-	obj3D_1 = obj3D_1 + obj2D_1;						   //
-	obj3D_1.PrintInfo();								   //
-	cout << "Minus" << endl;							   //
-	obj3D_1 = obj3D_1 - obj2D_1;						   //
-	obj3D_1.PrintInfo();								   //
-	cout << "Operation \">\"" << endl;					   //
-	superPuperChecker = obj3D_3 > obj2D_3;				   //
-	cout << superPuperChecker << endl;					   //  Here`s working 3D to 2D
-	cout << "Operation \">=\"" << endl;					   //
-	superPuperChecker = obj3D_3 >= obj2D_3;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<\"" << endl;					   //
-	superPuperChecker = obj3D_3 < obj2D_3;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<=\"" << endl;					   //
-	superPuperChecker = obj3D_3 <= obj2D_3;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"==\"" << endl;					   //
-	superPuperChecker = obj3D_3 == obj2D_3;				   //
-	cout << superPuperChecker << endl << endl;			   //
-
-
-	cout << ":VECTOR TO VECTOR3D:" << endl;				   //
-	cout << "Plus" << endl;								   //
-	obj2D_1 = obj2D_1 + obj3D_1;						   //
-	obj2D_1.PrintInfo();								   //
-	cout << "Minus" << endl;							   //
-	obj2D_1 = obj2D_1 - obj3D_1;						   //
-	obj2D_1.PrintInfo();								   //
-	cout << "Operation \">\"" << endl;					   //
-	superPuperChecker = obj2D_3 > obj3D_3;				   //
-	cout << superPuperChecker << endl;					   //  And here`s working 2D to 3D
-	cout << "Operation \">=\"" << endl;					   //
-	superPuperChecker = obj2D_3 >= obj3D_3;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<\"" << endl;					   //
-	superPuperChecker = obj2D_3 < obj3D_3;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"<=\"" << endl;					   //
-	superPuperChecker = obj2D_3 <= obj3D_3;				   //
-	cout << superPuperChecker << endl;					   //
-	cout << "Operation \"==\"" << endl;					   //
-	superPuperChecker = obj2D_3 == obj3D_3;				   //
-	cout << superPuperChecker;							   //
+	Vector3D vectorObj3D= Vector3D(33,33,33);				 //
+	Vector3D vectorObj3D3=move(vectorObj3D);				 //Peremezhenie
+	vectorObj3D3.PrintInfo();								 //
 }
